@@ -6,10 +6,10 @@ export class sorting
     tabletAccessories = '.hmenu-visible > :nth-child(15) > .hmenu-item'
     searchBar = '#twotabsearchtextbox';
     searchSubmitBtn = '#nav-search-submit-button';
-    sort = '#a-autoid-0-announce';
-    sortParam1 = '#s-result-sort-select_4'
-    sortParam2 = '#a-popover-3 > .a-popover-wrapper > .a-popover-inner > .a-nostyle > [aria-checked="true"] > #s-result-sort-select_1';
-
+    sortBtn = '#a-autoid-0-announce';
+    sortParam = '#s-result-sort-select_4'
+    item = '';
+   
     visitPage()
     {
         cy.visit(this.page);
@@ -25,14 +25,19 @@ export class sorting
         cy.get(this.computer).click();
     }
 
+    clickTabletAccessories()
+    {
+        cy.get(this.tabletAccessories).click();
+    }
+
     clickSort()
     {
-        cy.get(this.sort).click();
+        cy.get(this.sortBtn).click();
     } 
 
     selectSortParam()
     {
-        cy.get(this.sortParam1).click();
+        cy.get(this.sortParam).click();
     }
 
     searchBrand(brand)
@@ -45,14 +50,15 @@ export class sorting
         cy.get(this.searchSubmitBtn).click();
     }
 
-    clickSort2()
+    clickLowestPricedItem()
     {
-        cy.get(this.sort).click();
+        cy.get(this.item).click();
     }
+   
 
-    selectSortParam2()
+    windowSwitch()
     {
-        cy.get(this.sortParam2).click();           
+
     }
 
  

@@ -10,12 +10,14 @@ describe('Coding challenge', () => {
     cy.wait(500);
     getItem.clickHamburger();
     getItem.clickComputer();
+    getItem.clickTabletAccessories();
     getItem.clickSort();
     getItem.selectSortParam();
     getItem.searchBrand('JETech')
     getItem.clickSearchBtn();
-    getItem.clickSort2();
-    getItem.selectSortParam2();
+    getItem.clickLowestPricedItem();
+    getItem.windowSwitch();
+    getItem.assertPage();
 
   })
 })
